@@ -1,0 +1,28 @@
+Names?
+Waterworld
+Bubbletorio
+Bubbleorio
+Deep Sea Oxygen Harvesting
+02 Production Facility
+
+Tiles:
+Hydrothermal Vent
+Brine Pool
+Ice - Absorbs heat
+
+Units:
+Bubble Collector - Captures gas, pumps into adjacent tiles.
+
+Pump - Used pump fluids out of something
+Pipe - Used to transfer fluids
+    Fluid in pipes absorb/radiate heat.
+    Insulated pipe helps protect the fluid from heat gain/loss
+Tank - Holds captured fluids
+
+Brine Siphon - Collects brine and pumps it to nearby tiles
+
+Cooling Station - Cools the fluid, but gives off heat
+
+Thermal Generator - Absorbs heat and creates energy
+
+Battery - Holds Energy, can be sold
