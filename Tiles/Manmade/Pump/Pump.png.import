@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/BrinePool.png-b034dd49c96563f7c4154ffd5591c179.stex"
+path="res://.import/Pump.png-3ce920e4e6e145dc8a4a007424e79d9b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tiles/BrinePool/BrinePool.png"
-dest_files=[ "res://.import/BrinePool.png-b034dd49c96563f7c4154ffd5591c179.stex" ]
+source_file="res://Tiles/Manmade/Pump/Pump.png"
+dest_files=[ "res://.import/Pump.png-3ce920e4e6e145dc8a4a007424e79d9b.stex" ]
 
 [params]
 
