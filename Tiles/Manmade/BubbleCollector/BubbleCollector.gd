@@ -1,9 +1,6 @@
-extends "res://Tiles/BaseTile.gd"
-
-export var max_bubbles = 100;
+extends "res://Tiles/Manmade/FluidHolder/FluidHolder.gd"
 
 var tile_range = 2;
-var bubble_count = 0;
 
 func tick():
 	if (grid == null): return;
