@@ -4,6 +4,7 @@ signal tile_clicked(tile);
 
 var grid = null;
 var coord:Vector2 = Vector2();
+var direction = Vector2(1, 0);
 
 func _input(event):
 	var mouseEvent = event as InputEventMouse;

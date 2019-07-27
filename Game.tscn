@@ -17,7 +17,11 @@ script = ExtResource( 1 )
 
 [node name="TileGrid" parent="." instance=ExtResource( 2 )]
 
+[node name="Preview" type="Node2D" parent="TileGrid"]
+modulate = Color( 1, 1, 1, 0.498039 )
+
 [node name="Control" type="Control" parent="."]
+editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 600.0
@@ -25,6 +29,7 @@ margin_right = 1024.0
 margin_bottom = 600.0
 
 [node name="UI" type="VBoxContainer" parent="Control"]
+editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_constants/separation = 10

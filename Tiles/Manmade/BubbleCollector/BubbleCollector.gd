@@ -6,6 +6,8 @@ var tile_range = 2;
 var bubble_count = 0;
 
 func tick():
+	if (grid == null): return;
+	
 	var vents = count_vents_in_range();
 	var bubbles = vents * 1;
 	bubble_count = min(max_bubbles, bubble_count + bubbles);

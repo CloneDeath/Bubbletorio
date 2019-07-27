@@ -14,15 +14,16 @@ var tile_ice = preload("res://Tiles/Natural/Ice/Ice.tscn");
 var tile_vent = preload("res://Tiles/Natural/Vent/Vent.tscn");
 
 var tile_map = {};
-var hovered_tile = null;
 var tick_time = 0;
+
+var _hovered_tile = null;
 
 func _ready():
 	for x in range(Size.x):
 		for y in range(Size.y):
 			var coord = Vector2(x, y);
 			var tileScene = _get_random_tile(y);
-			set_tile(coord, tileScene);
+			set_tile(coord, tileScene.instance());
 
 func _process(delta):
 	check_hovered_tile();
@@ -36,16 +37,18 @@ func update_ticks(delta):
 		trigger_tick();
 
 func trigger_tick():
-	for child in get_children():
-		child.tick();
+	self.propagate_call("tick");
 	
 func check_hovered_tile():
+	var tile = get_hovered_tile();
+	if (tile != _hovered_tile):
+		_hovered_tile = tile;
+		emit_signal("tile_hovered", _hovered_tile);
+
+func get_hovered_tile():
 	var mouse_position = get_viewport().get_mouse_position();
 	var coord = get_coord_from_position(mouse_position);
-	var tile = get_tile_from_coord(coord);
-	if (tile != hovered_tile):
-		hovered_tile = tile;
-		emit_signal("tile_hovered", hovered_tile);
+	return get_tile_from_coord(coord);
 
 func get_coord_from_position(position:Vector2):
 	var tileSep = (TileSize + TileSeparation);
@@ -55,17 +58,21 @@ func get_tile_from_coord(coord:Vector2):
 	if (tile_map.has(coord)): return tile_map[coord];
 	return null;
 
-func set_tile(coord:Vector2, tileScene:PackedScene):
+func set_tile(coord:Vector2, tile):
 	var previous_tile = get_tile_from_coord(coord);
 	if (previous_tile != null):
 		previous_tile.queue_free();
-	var tile = tileScene.instance();
+	if (tile.get_parent() != null):
+		tile.get_parent().remove_child(tile);
 	tile.position = coord_to_position(coord);
 	tile.coord = coord;
 	tile.connect("tile_clicked", self, "tile_clicked");
 	tile.grid = self;
 	tile_map[coord] = tile;
 	add_child(tile);
+
+func clear_tile(coord:Vector2):
+	set_tile(coord, tile_empty.instance());
 
 func tile_clicked(tile):
 	emit_signal("tile_clicked", tile);
