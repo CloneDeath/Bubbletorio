@@ -7,7 +7,7 @@ func tick():
 	
 	var vents = count_vents_in_range();
 	var bubbles = vents * 1;
-	bubble_count = min(max_bubbles, bubble_count + bubbles);
+	bubble_count = int(min(max_bubbles, bubble_count + bubbles));
 
 func count_vents_in_range():
 	var vents = 0;

@@ -41,4 +41,5 @@ func _input(event):
 	
 func update_tile():
 	if (current_tile == null): return;
+	if (Engine.editor_hint): return;
 	current_tile.direction = _directions[_direction_index];

@@ -17,7 +17,7 @@ func _on_command_selected(command):
 	update_command_preview();
 
 func update_command_preview():
-	if (_preview != null):
+	if (_preview != null && _preview.get_parent() == $TileGrid/Preview):
 		$TileGrid/Preview.remove_child(_preview);
 	_preview = _selected_command.current_tile;
 	$TileGrid/Preview.add_child(_preview);

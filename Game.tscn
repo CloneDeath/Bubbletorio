@@ -8,7 +8,7 @@
 [ext_resource path="res://Tiles/Manmade/Pipe/Pipe.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Tiles/Manmade/Pump/Pump.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Tiles/Manmade/Tank/Tank.tscn" type="PackedScene" id=8]
-[ext_resource path="res://UI/CurrentTileInfo/Tiles/BubbleCollectorInfo/BubbleCollectorInfo.tscn" type="PackedScene" id=9]
+[ext_resource path="res://UI/CurrentTilePane.tscn" type="PackedScene" id=9]
 
 [sub_resource type="ButtonGroup" id=1]
 
@@ -21,7 +21,6 @@ script = ExtResource( 1 )
 modulate = Color( 1, 1, 1, 0.498039 )
 
 [node name="Control" type="Control" parent="."]
-editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 600.0
@@ -35,17 +34,14 @@ anchor_bottom = 1.0
 custom_constants/separation = 10
 
 [node name="CommandArea" type="HBoxContainer" parent="Control/UI"]
-editor/display_folded = true
 margin_right = 424.0
 margin_bottom = 92.0
 
 [node name="Buttons" type="VBoxContainer" parent="Control/UI/CommandArea"]
-editor/display_folded = true
 margin_right = 118.0
 margin_bottom = 92.0
 
 [node name="ButtonBubble" type="Button" parent="Control/UI/CommandArea/Buttons"]
-editor/display_folded = true
 margin_right = 118.0
 margin_bottom = 20.0
 group = SubResource( 1 )
@@ -99,17 +95,14 @@ script = ExtResource( 3 )
 script = ExtResource( 4 )
 tileScene = ExtResource( 8 )
 
-[node name="CurrentTileInfo" type="VBoxContainer" parent="Control/UI"]
+[node name="CurrentTilePane" parent="Control/UI" instance=ExtResource( 9 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_top = 102.0
 margin_right = 424.0
 margin_bottom = 102.0
-
-[node name="BubbleCollectorInfo" parent="Control/UI/CurrentTileInfo" instance=ExtResource( 9 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 424.0
 [connection signal="tile_clicked" from="TileGrid" to="." method="_on_TileGrid_tile_clicked"]
-[connection signal="tile_hovered" from="TileGrid" to="Control/UI/CurrentTileInfo/BubbleCollectorInfo" method="set_current_tile"]
+[connection signal="tile_hovered" from="TileGrid" to="Control/UI/CurrentTilePane" method="set_current_tile"]
 [connection signal="command_pressed" from="Control/UI/CommandArea/Buttons/ButtonBubble" to="." method="_on_command_selected"]
 [connection signal="command_pressed" from="Control/UI/CommandArea/Buttons/ButtonPipe" to="." method="_on_command_selected"]
 [connection signal="command_pressed" from="Control/UI/CommandArea/Buttons/ButtonPump" to="." method="_on_command_selected"]

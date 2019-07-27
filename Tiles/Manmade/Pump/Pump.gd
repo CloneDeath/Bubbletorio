@@ -7,6 +7,9 @@ func _process(_delta):
 
 func tick():
 	if (grid == null): return;
-	var from = grid.get_tile_from_coord(coord + direction * -1);
 	var to = grid.get_tile_from_coord(coord + direction);
+	give_fluid_to(to, max_bubbles);
+	
+	var from = grid.get_tile_from_coord(coord + direction * -1);
+	take_fluid_from(from, max_bubbles);
 	

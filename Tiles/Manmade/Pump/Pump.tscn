@@ -4,7 +4,9 @@
 [ext_resource path="res://Tiles/Manmade/Pump/Pump.gd" type="Script" id=2]
 [ext_resource path="res://Tiles/Manmade/Pump/Pump.png" type="Texture" id=3]
 
-[node name="Pump" index="0" instance=ExtResource( 1 )]
+[node name="Pump" index="0" groups=[
+"tile_pump",
+] instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 max_bubbles = 3
 
