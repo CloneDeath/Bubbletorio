@@ -14,41 +14,41 @@ margin_left = 102.0
 margin_right = 208.0
 text = "Bubble Collector"
 
-[node name="RangeLabel" type="Label" parent="Properties" index="2"]
+[node name="BubblesLabel" type="Label" parent="Properties" index="2"]
 margin_top = 18.0
 margin_right = 98.0
 margin_bottom = 32.0
-text = "Range:"
-
-[node name="RangeValue" type="Label" parent="Properties" index="3"]
-margin_left = 102.0
-margin_top = 18.0
-margin_right = 208.0
-margin_bottom = 32.0
-text = "3 Tiles"
-
-[node name="VentsInRangeLabel" type="Label" parent="Properties" index="4"]
-margin_top = 36.0
-margin_right = 98.0
-margin_bottom = 50.0
-text = "Vents in Range:"
-
-[node name="VentsInRangeValue" type="Label" parent="Properties" index="5"]
-margin_left = 102.0
-margin_top = 36.0
-margin_right = 208.0
-margin_bottom = 50.0
-text = "0 Vents"
-
-[node name="BubblesLabel" type="Label" parent="Properties" index="6"]
-margin_top = 54.0
-margin_right = 98.0
-margin_bottom = 68.0
 text = "Bubbles:"
 
-[node name="BubblesValue" type="Label" parent="Properties" index="7"]
+[node name="BubblesValue" type="Label" parent="Properties" index="3"]
+margin_left = 102.0
+margin_top = 18.0
+margin_right = 208.0
+margin_bottom = 32.0
+text = "0/10 Bubbles"
+
+[node name="RangeLabel" type="Label" parent="Properties" index="4"]
+margin_top = 36.0
+margin_right = 98.0
+margin_bottom = 50.0
+text = "Range:"
+
+[node name="RangeValue" type="Label" parent="Properties" index="5"]
+margin_left = 102.0
+margin_top = 36.0
+margin_right = 208.0
+margin_bottom = 50.0
+text = "3 Tiles"
+
+[node name="VentsInRangeLabel" type="Label" parent="Properties" index="6"]
+margin_top = 54.0
+margin_right = 98.0
+margin_bottom = 68.0
+text = "Vents in Range:"
+
+[node name="VentsInRangeValue" type="Label" parent="Properties" index="7"]
 margin_left = 102.0
 margin_top = 54.0
 margin_right = 208.0
 margin_bottom = 68.0
-text = "0/10 Bubbles"
+text = "0 Vents"
