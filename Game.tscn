@@ -28,12 +28,12 @@ margin_right = 1024.0
 margin_bottom = 600.0
 
 [node name="UI" type="VBoxContainer" parent="Control"]
-editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_constants/separation = 10
 
 [node name="CommandArea" type="HBoxContainer" parent="Control/UI"]
+editor/display_folded = true
 margin_right = 424.0
 margin_bottom = 92.0
 
